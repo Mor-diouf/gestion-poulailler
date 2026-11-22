@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-tap-highlight-color: transparent; }
+  body {
+    @apply bg-creme text-encre font-sans antialiased;
+    font-feature-settings: 'cv11';
+  }
+  h1, h2, h3, h4 { @apply font-titre tracking-tight; }
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+}
+
+@layer utilities {
+  .chiffres { font-variant-numeric: tabular-nums; @apply font-titre; }
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+  .print-plain { box-shadow: none !important; }
+}
