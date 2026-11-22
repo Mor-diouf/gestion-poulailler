@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.vercel.gestion_poulailler_ttb.twa",
+      "sha256_cert_fingerprints": [
+        "23:9F:F6:02:17:F4:3A:57:30:5D:EF:9B:98:C0:A2:A2:AB:E0:93:0F:C5:B9:7B:F2:AC:EC:85:B1:FB:DF:64:97"
+      ]
+    }
+  }
+]

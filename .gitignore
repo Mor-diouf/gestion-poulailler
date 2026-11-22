@@ -7,3 +7,8 @@ dist
 
 # Projet Android et clé de signature : ne jamais publier
 android/
+
+# Paquet PWABuilder : contient la clé de signature Android, ne jamais publier
+TTB - Google Play package*
+*.keystore
+signing-key-info.txt
