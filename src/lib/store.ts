@@ -38,10 +38,22 @@ export interface Session {
   erreur?: string
 }
 
-let etat: Donnees = donneesVides()
-let session: Session = supabaseConfigure
+/**
+ * Mode démonstration, seulement en développement (adresse avec « ?demo ») :
+ * données d'exemple sans connexion, pour les captures d'écran. Absent de la version en ligne.
+ */
+const DEMO = import.meta.env.DEV && new URLSearchParams(window.location.search).has('demo')
+
+let etat: Donnees = DEMO ? donneesExemple(aujourdhui()) : donneesVides()
+let session: Session = DEMO
+  ? { statut: 'pret', email: 'demo@exemple.sn' }
+  : supabaseConfigure
   ? { statut: 'chargement' }
-  : { statut: 'erreur', erreur: 'Supabase n’est pas configuré : vérifiez le fichier .env puis relancez l’application.' }
+  : {
+      statut: 'erreur',
+      erreur:
+        'Supabase n’est pas configuré. Ajoutez VITE_SUPABASE_URL et VITE_SUPABASE_PUBLISHABLE_KEY dans le fichier .env, ou dans les variables d’environnement de Vercel, puis reconstruisez l’application.',
+    }
 let utilisateur: User | null = null
 let fermeId: ID | null = null
 const abonnes = new Set<() => void>()
@@ -139,7 +151,7 @@ export function recharger(silencieux = true) {
   return Promise.resolve()
 }
 
-if (supabaseConfigure) {
+if (supabaseConfigure && !DEMO) {
   supabase.auth.onAuthStateChange((evenement, s) => {
     // Les appels à Supabase se font hors du rappel, comme le recommande la bibliothèque.
     setTimeout(() => {

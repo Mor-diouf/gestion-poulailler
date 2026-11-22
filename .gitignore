@@ -4,3 +4,6 @@ dist
 .env
 .env.local
 *.tsbuildinfo
+
+# Projet Android et clé de signature : ne jamais publier
+android/

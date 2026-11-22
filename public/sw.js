@@ -1,5 +1,5 @@
 // Service hors ligne minimal : l'application s'ouvre même sans réseau.
-const CACHE = 'mon-poulailler-v2'
+const CACHE = 'mon-poulailler-v3'
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['./', './index.html', './manifest.webmanifest', './favicon.png', './logo-ttb-rond.webp', './icone-192.png'])))

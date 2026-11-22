@@ -1,32 +1,83 @@
 {
+  "id": "/",
   "name": "Mon Poulailler",
   "short_name": "Poulailler",
-  "description": "Gestion d'élevage de Touba Tawfekh Business : bandes, charges, mortalité et ventes.",
+  "description": "Gestion d'élevage de poulets de chair de Touba Tawfekh Business : bandes, charges, mortalité, ventes, crédits clients et bénéfice, calculés automatiquement en F CFA.",
   "lang": "fr",
-  "start_url": "./",
-  "scope": "./",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
   "orientation": "portrait",
   "background_color": "#FAF7F0",
   "theme_color": "#1F5130",
+  "categories": ["business", "productivity", "finance"],
+  "prefer_related_applications": false,
+  "launch_handler": { "client_mode": "navigate-existing" },
   "icons": [
+    { "src": "/icone-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icone-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icone-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "screenshots": [
     {
-      "src": "icone-192.png",
-      "sizes": "192x192",
+      "src": "/screenshots/telephone-accueil.png",
+      "sizes": "780x1688",
       "type": "image/png",
-      "purpose": "any"
+      "form_factor": "narrow",
+      "label": "Tableau de bord : poulets vivants, mortalité, chiffre d'affaires et bénéfice"
     },
     {
-      "src": "icone-512.png",
-      "sizes": "512x512",
+      "src": "/screenshots/telephone-bande.png",
+      "sizes": "780x1688",
       "type": "image/png",
-      "purpose": "any"
+      "form_factor": "narrow",
+      "label": "Détail d'une bande avec son bilan"
     },
     {
-      "src": "icone-512.png",
-      "sizes": "512x512",
+      "src": "/screenshots/telephone-saisie.png",
+      "sizes": "780x1688",
       "type": "image/png",
-      "purpose": "maskable"
+      "form_factor": "narrow",
+      "label": "Saisie rapide d'une vente, montant calculé en direct"
+    },
+    {
+      "src": "/screenshots/ordinateur-accueil.png",
+      "sizes": "1440x900",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Tableau de bord sur ordinateur"
+    },
+    {
+      "src": "/screenshots/ordinateur-rapports.png",
+      "sizes": "1440x900",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Rapports et comparaison des bandes"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ventes",
+      "short_name": "Ventes",
+      "description": "Voir les ventes et les crédits clients",
+      "url": "/#/ventes",
+      "icons": [{ "src": "/icone-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Bandes",
+      "short_name": "Bandes",
+      "description": "Voir les bandes en cours",
+      "url": "/#/bandes",
+      "icons": [{ "src": "/icone-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Mortalité",
+      "short_name": "Mortalité",
+      "description": "Historique et saisie des mortalités",
+      "url": "/#/mortalite",
+      "icons": [{ "src": "/icone-192.png", "sizes": "192x192", "type": "image/png" }]
     }
   ]
 }
